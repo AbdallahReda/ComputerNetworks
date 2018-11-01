@@ -1,2 +1,2 @@
 # ComputerNetworks
-Delivering Assignments for Computer Networks Course
+This repository is for Delivering assignments of Computer Networks Course 
