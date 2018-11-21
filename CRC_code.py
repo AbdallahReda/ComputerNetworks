@@ -35,5 +35,13 @@ def generator(message, gen):
     transmitted = bin(int(frame,2) ^ int(remndr,2))[2:] #transmitted message = frame(message after appending zeros) xor gen
     #transmitted = bin({int(message,2)[2:]}{int(remndr,2)[2:]}) #transmitted message = message appended with gen
     return remndr, transmitted
+
+def verifier(transmitted,gen):
+    remndr , _ = generator(transmitted, gen)
+
+    if(int(remndr,2) == 0):
+        return ("Message is correct")      
+    else:
+        return ("Message is not correct")
     
     
