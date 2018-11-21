@@ -37,11 +37,11 @@ def generator(message, gen):
     return remndr, transmitted
 
 def verifier(transmitted,gen):
-    remndr , _ = generator(transmitted, gen)
-
-    if(int(remndr,2) == 0):
+    remndr , _ = generator(transmitted, gen) #Pass the transmitted message to generator function
+                                             #Computing the remndr then return it
+    if(int(remndr,2) == 0):                  #if remndr = 0 then the message is correct
         return ("Message is correct")      
-    else:
+    else:                                    #if remndr !=0 then the message is not correct
         return ("Message is not correct")
     
     
