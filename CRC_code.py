@@ -1,6 +1,7 @@
 import binascii
 
-def generator(message, gen):
+def generator(message, gen):    #Generator function which takes message and gen as paramters, performing crc algorithm  
+                                #then return the transmitted message and the remndr of divison operation
     frame = message             # Make frame = message  
     for i in range(len(gen)-1): # for loop to iterate over the frame and append zeros to it 
         frame += '0'            # Appending zeros to frame
@@ -36,7 +37,8 @@ def generator(message, gen):
     #transmitted = bin({int(message,2)[2:]}{int(remndr,2)[2:]}) #transmitted message = message appended with gen
     return remndr, transmitted
 
-def verifier(transmitted,gen):
+def verifier(transmitted,gen):               #verifier function which takes message and gen as paramters, calling generator function
+                                             #then check if transmitted message is correct or not
     remndr , _ = generator(transmitted, gen) #Pass the transmitted message to generator function
                                              #Computing the remndr then return it
     if(int(remndr,2) == 0):                  #if remndr = 0 then the message is correct
