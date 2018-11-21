@@ -45,5 +45,12 @@ def verifier(transmitted,gen):               #verifier function which takes mess
         return ("Message is correct")      
     else:                                    #if remndr !=0 then the message is not correct
         return ("Message is not correct")
+      
+      
+ def alter(transmitted,bitNO):   #alter function which invert a certain bitNO in the transmitted message 
+                                            
+    transmitted = int(transmitted,2)
+    transmitted &= ~(1 << bitNO) # Compute mask, an integer with just bit 'index' set.
+    return str((bin(transmitted))[2:]) # to output "00101010" not "0b00101010"
     
     
