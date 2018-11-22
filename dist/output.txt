@@ -1,0 +1,3 @@
+a.  transmitted_message  ->  11100110011001
+b.  altered_message      ->  11100110111001
+c.  Message              ->  Message is not correct
